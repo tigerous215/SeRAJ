@@ -3,8 +3,8 @@
 ## what does this project do?
 I donno, ask someone else.
 
-## how can somebody run this project?
-As a typical django project. And if you're too lazy as a typical developer, just copy-paste following line
+## how can somebody run this project?:
+As a typical django project. And if you're too lazy as a typical developer, just copy-paste the following commands:
 
 0. the only requirement is `python3`
 
