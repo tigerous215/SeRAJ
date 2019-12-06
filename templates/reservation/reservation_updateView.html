@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Homepage</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ reserve.title }}</li>
+    </ol>
+  </nav>
+  <h2 class="mb-3">
+    {{ reserve.title }}
+
+  </h2>
+  <div class="row mb-3">
+    <div class="col-md-6 col-sm-8 col-12">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <a href="{% url 'reservation:reservation_status' reserve.pk %}" class="btn btn-success" role="button">Accept</a>
+        <a href="{% url 'reservation:reservation_list' %}" class="btn btn-outline-secondary" role="button">Back</a>
+        <a href="{% url 'home' %}" class="btn btn-danger float-right">Decline</a>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

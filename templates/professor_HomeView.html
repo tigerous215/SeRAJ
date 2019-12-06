@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'reservations:reservation_create' %}" class="btn btn-primary" role="button">Reservation</a>
+<br>
+<a href="{% url 'rooms:rooms_list' %}" class="btn btn-primary" role="button">Rooms</a>
+{% endblock %}
+
+
+
+

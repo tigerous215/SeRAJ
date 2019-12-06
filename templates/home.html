@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>What is SeRAJ?</h3>
+  <p>SeRAJ is a room reservation system where professors and their TAs can request to reserve rooms, computer sites and conference rooms.
+        These requests will be processed by the educational administratives.</p>
+
+  <hr>
+
+  <p>
+    If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>.
+      If you are new to SeRAJ, contact your department educational administratives or your professor in order to get an account.</a>.
+  </p>
+
+{% endblock %}

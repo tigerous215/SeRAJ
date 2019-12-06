@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Homepage</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Requests</li>
+    </ol>
+  </nav>
+  <h2 class="mb-3">Reservation Requests</h2>
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>User</th>
+          <th>Requested Room</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reservation in reservations %}
+          <tr>
+            <td class="align-middle">{{ reservation.title }}</td>
+            <td class="align-middle">{{ reservation.user }}</td>
+            <td class="align-middle">{{ reservation.room }}</td>
+            <td class="text-right">
+              <a href="{% url 'reservations:reservation_view' reservation.pk %}" class="btn btn-primary">View Request</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="5">There aren't any reservation requests.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
